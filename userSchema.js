@@ -1,4 +1,13 @@
 let mongoose = require("mongoose");
+const resultsSchema = new mongoose.schema({
+    Wins: Number,
+    Losses: Number
+});
+
+const matchUpsSchema = new mongoose.schema({
+    opponentUsername: String,
+    Results: ResultSchema
+});
 
 const user = new mongoose.schema({
     username: { 
@@ -16,13 +25,7 @@ const user = new mongoose.schema({
     Wins: Number,
     Losses: Number,
     TotalGames: Number,
-    MatchUps: [{
-        opponentUsername: String,
-        Results: [{
-            Wins: Number,
-            Losses: Number
-        }]
-    }]
+    MatchUps: matchUpsSchema
 });
 
 const userDB = mongoose.model(
