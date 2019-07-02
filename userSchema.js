@@ -1,16 +1,17 @@
 let mongoose = require("mongoose");
 let schema = mongoose.schema;
-const resultsSchema = schema({
+
+exports.resultsSchema = new schema({
     Wins: Number,
     Losses: Number
 });
 
-const matchUpsSchema = schema({
+exports.matchUpsSchema = new schema({
     opponentUsername: String,
     Results: ResultSchema
 });
 
-const user = schema({
+exports.UsersSchema = new schema({
     username: { 
         type: String,
         required: true,
@@ -40,3 +41,4 @@ const userDB = mongoose.model(
     "UserDatabase",
     user
 );
+exports.UsersModel = mongoose.model('UserDatabase', this.user)
