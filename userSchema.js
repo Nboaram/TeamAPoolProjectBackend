@@ -1,17 +1,17 @@
 let mongoose = require("mongoose");
-let schema = mongoose.schema;
+let schema = mongoose.Schema;
 
-exports.resultsSchema = new schema({
+let resultsSchema = new schema({
     Wins: Number,
     Losses: Number
 });
 
-exports.matchUpsSchema = new schema({
+let matchUpsSchema = new schema({
     opponentUsername: String,
-    Results: ResultSchema
+    Results: resultsSchema
 });
 
-exports.UsersSchema = new schema({
+let user= new schema({
     username: { 
         type: String,
         required: true,
@@ -37,8 +37,6 @@ exports.UsersSchema = new schema({
     MatchUps: matchUpsSchema
 });
 
-const userDB = mongoose.model(
-    "UserDatabase",
-    user
-);
-exports.UsersModel = mongoose.model('UserDatabase', this.user)
+// let userDB = mongoose.model( 'UserDatabase', user );
+exports.UsersModel = mongoose.model( 'UserDatabase', user );
+// exports.UserSchema = user;
