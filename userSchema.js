@@ -1,10 +1,18 @@
-let mongo = require("mongoose");
+let mongoose = require("mongoose");
 
-const user = new mongo.schema({
-    username: String,
-    firtName: String,
+const user = new mongoose.schema({
+    username: { 
+        type: String,
+        required: true,
+        unique: true,
+        minlength: 3
+    },
+    firstName: String,
     surname: String,
-    password: String,
+    password: {
+        type: String,
+        required: true
+    },
     Wins: Number,
     Losses: Number,
     TotalGames: Number,
@@ -17,7 +25,7 @@ const user = new mongo.schema({
     }]
 });
 
-const userDB = mongo.model(
+const userDB = mongoose.model(
     "UserDatabase",
     user
 );
