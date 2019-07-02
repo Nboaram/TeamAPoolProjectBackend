@@ -16,11 +16,18 @@ const user = new mongoose.schema({
         unique: true,
         minlength: 3
     },
-    firstName: String,
-    surname: String,
+    firstName: {
+        type: String,
+        required: true,
+    },
+    surname: {
+        type: String,
+        required: true,
+    },
     password: {
         type: String,
-        required: true
+        required: true,
+        minlength: 6
     },
     Wins: Number,
     Losses: Number,
