@@ -1,0 +1,23 @@
+{
+  "name": "teamapoolproject",
+  "version": "1.0.0",
+  "description": "A pool score tracker, featuring users and matches",
+  "main": "userSchema.js",
+  "dependencies": {
+    "mongoose": "^5.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nboaram/TeamAPoolProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nboaram/TeamAPoolProject/issues"
+  },
+  "homepage": "https://github.com/Nboaram/TeamAPoolProject#readme"
+}
