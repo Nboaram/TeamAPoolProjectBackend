@@ -37,6 +37,6 @@ let user= new schema({
     MatchUps: matchUpsSchema
 });
 
-// let userDB = mongoose.model( 'UserDatabase', user );
+
 exports.UsersModel = mongoose.model( 'UserDatabase', user );
-// exports.UserSchema = user;
+
