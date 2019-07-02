@@ -1,14 +1,14 @@
 let mongoose = require("mongoose");
-let schema = mongoose.schema;
+let schema = mongoose.Schema;
 
 let resultsSchema = new schema({
-    Wins: Number,
-    Losses: Number
+    wins: Number,
+    losses: Number
 });
 
 let matchUpsSchema = new schema({
     opponentUsername: String,
-    Results: ResultSchema
+    results: resultsSchema
 });
 
 let user = new schema({
@@ -31,10 +31,10 @@ let user = new schema({
         required: true,
         minlength: 6
     },
-    Wins: Number,
-    Losses: Number,
-    TotalGames: Number,
-    MatchUps: matchUpsSchema
+    wins: Number,
+    losses: Number,
+    totalGames: Number,
+    matchUps: matchUpsSchema
 });
 
 exports.UsersModel = mongoose.model('UserDatabase', user);
