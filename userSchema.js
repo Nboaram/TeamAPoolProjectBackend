@@ -1,15 +1,16 @@
 let mongoose = require("mongoose");
-const resultsSchema = new mongoose.schema({
+let schema = mongoose.schema;
+const resultsSchema = schema({
     Wins: Number,
     Losses: Number
 });
 
-const matchUpsSchema = new mongoose.schema({
+const matchUpsSchema = schema({
     opponentUsername: String,
     Results: ResultSchema
 });
 
-const user = new mongoose.schema({
+const user = schema({
     username: { 
         type: String,
         required: true,
