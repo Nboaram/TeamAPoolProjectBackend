@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-//createUser = require("./createUser.js");
+// createUser = require("./createUser.js");
 const readUser = require("./readUser.js");
 //updateUser = require("./userUpdate.js");
-//deleteUser = require("./userDelete.js");
+const deleteUser = require("./userDelete.js");
 
 //Make function in another file and export it
 //Join it up in here
@@ -11,16 +11,16 @@ const readUser = require("./readUser.js");
 
 
 //In the other file the code looks like:
-// exports = router.post('/create', (req, res, next) => {
-//     const newUser = new Users.UserModel(req.body);
-//     return newUser.save().then(
-//         doc => res.status(201).send(doc),
-//         error => next(error)
-//     );
-// });
+exports = router.post('/create', (req, res, next) => {
+    const newUser = new Users.UserModel(req.body);
+    return newUser.save().then(
+        doc => res.status(201).send(doc),
+        error => next(error)
+    );
+});
 
 // Create User
-//router.post('/', createUser);
+// router.post('/', createUser);
 
 // Read One User
 router.get('/', readUser);
@@ -29,7 +29,7 @@ router.get('/', readUser);
 //router.put('/', updateUser);
 
 // Delete User
-//router.delete('/', deleteUser);
+router.delete('/:username', deleteUser);
 
 
 module.exports = router;
