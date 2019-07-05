@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-//createUser = require("./createUser.js");
+// createUser = require("./createUser.js");
 const readUser = require("./readUser.js");
-//updateUser = require("./userUpdate.js");
-//deleteUser = require("./userDelete.js");
+const updateUser = require("./userUpdate.js");
+const deleteUser = require("./userDelete.js");
 
 //Make function in another file and export it
 //Join it up in here
 
 
 
-//In the other file the code looks like:
+// In the other file the code looks like:
 // exports = router.post('/create', (req, res, next) => {
 //     const newUser = new Users.UserModel(req.body);
 //     return newUser.save().then(
@@ -20,16 +20,16 @@ const readUser = require("./readUser.js");
 // });
 
 // Create User
-//router.post('/', createUser);
+// router.post('/', createUser);
 
 // Read One User
 router.get('/', readUser);
 
 //Update User
-//router.put('/', updateUser);
+router.put('/:username', updateUser);
 
 // Delete User
-//router.delete('/', deleteUser);
+router.delete('/:username', deleteUser);
 
 
 module.exports = router;
