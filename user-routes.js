@@ -8,8 +8,6 @@ const deleteUser = require("./userDelete.js");
 //Make function in another file and export it
 //Join it up in here
 
-
-
 // In the other file the code looks like:
 // exports = router.post('/create', (req, res, next) => {
 //     const newUser = new Users.UserModel(req.body);
@@ -23,7 +21,7 @@ const deleteUser = require("./userDelete.js");
 router.post('/', createUser);
 
 // Read One User
-router.get('/', readUser);
+router.get('/:username', readUser);
 
 //Update User
 router.put('/:username', updateUser);
@@ -31,7 +29,4 @@ router.put('/:username', updateUser);
 // Delete User
 router.delete('/:username', deleteUser);
 
-
 module.exports = router;
-
-
