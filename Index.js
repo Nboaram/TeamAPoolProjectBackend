@@ -1,5 +1,5 @@
 const userRoutes = require("./user-routes");
-//const matchRoutes = require("./match-routes.js");
+const matchRoutes = require("./matchRoutes.js");
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require('cors');
@@ -10,6 +10,7 @@ const bodyParser = require("body-parser");
 app.use(cors({origin: true}));
 app.use(bodyParser.json());
 app.use('/user', userRoutes);
+app.use('/match', matchRoutes);
 
 mongoose.connect(config.app.MONGODB_URI, {useNewUrlParser:true}, function (err) {
     if (err) {
