@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// createUser = require("./createUser.js");
+const createUser = require("./userCreate.js");
 const readUser = require("./readUser.js");
 const updateUser = require("./userUpdate.js");
 const deleteUser = require("./userDelete.js");
@@ -20,7 +20,7 @@ const deleteUser = require("./userDelete.js");
 // });
 
 // Create User
-// router.post('/', createUser);
+router.post('/', createUser);
 
 // Read One User
 router.get('/', readUser);
