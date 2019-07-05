@@ -1,7 +1,7 @@
-const Matches = require('./matchScheme'); 
+const Matches = require('./matchSchema'); 
 
 module.exports = (request, response) => {
-    Matches.MatchModel.findOneAndRemove({player_one: request.params.player_one}).then((matchUser) => {
+    Matches.MatchModel.findOneAndRemove({playerOne: request.params.playerOne}).then((matchUser) => {
         response.status(204).send(matchUser);
     });
 };
