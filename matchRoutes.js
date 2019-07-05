@@ -10,7 +10,7 @@ const readMatch = require("./matchRead.js")
 matchRouter.post('/', createMatch);
 
 // Read All Match
-matchRouter.get('/', readAllMatch);
+matchRouter.get('', readAllMatch);
 
 // Read One Match
 matchRouter.get('/:playerOne', readMatch);

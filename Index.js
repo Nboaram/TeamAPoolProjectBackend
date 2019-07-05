@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 
 app.use(cors({origin: true}));
 app.use(bodyParser.json());
+app.options('*', cors());
 app.use('/user', userRoutes);
 app.use('/match', matchRoutes);
 
