@@ -1,5 +1,5 @@
 const userRoutes = require("./user-routes");
-const matchRoutes = require("./matchRoutes.js");
+const matchRoutes = require("./matchRoutes");
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require('cors');
