@@ -1,8 +1,7 @@
 const Users = require('./userSchema');
 
 module.exports = (request, response) => {
-    console.log(request);
-    return Users.UsersModel.find().then((foundData) => {
-        return response.status(200).send(foundData);
-    });
-};   
+    Users.UsersModel.findOne({'username': request.params.username}).then((user) => {
+            response.status(200).send(user);
+        })
+};
