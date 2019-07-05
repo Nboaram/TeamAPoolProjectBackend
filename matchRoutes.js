@@ -1,13 +1,16 @@
 const express = require('express');
 const matchRouter = express.Router();
-// createMatch = require("./createMatch.js");
+const createMatch = require("./createMatch.js");
 const readAllMatch = require("./matchReadAll.js");
-const readMatch = require("./matchRead.js");
+const readMatch = require("./matchRead.js")
 // const updateMatch = require("./userMatch.js");
 // const deleteMatch = require("./userMatch.js");
 
 // Read All Match
 matchRouter.get('/', readAllMatch);
+
+// Create Match
+matchRouter.post('/', createMatch);
 
 // Read One Match
 matchRouter.get('/:playerOne', readMatch);
