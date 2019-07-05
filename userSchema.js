@@ -26,11 +26,6 @@ exports.user = new schema({
         type: String,
         required: true,
     },
-    password: {
-        type: String,
-        required: true,
-        minlength: 6
-    },
     wins: Number,
     losses: Number,
     totalGames: Number,
