@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 // createUser = require("./createUser.js");
 const readUser = require("./readUser.js");
-//updateUser = require("./userUpdate.js");
+const updateUser = require("./userUpdate.js");
 const deleteUser = require("./userDelete.js");
 
 //Make function in another file and export it
@@ -10,14 +10,14 @@ const deleteUser = require("./userDelete.js");
 
 
 
-//In the other file the code looks like:
-exports = router.post('/create', (req, res, next) => {
-    const newUser = new Users.UserModel(req.body);
-    return newUser.save().then(
-        doc => res.status(201).send(doc),
-        error => next(error)
-    );
-});
+// In the other file the code looks like:
+// exports = router.post('/create', (req, res, next) => {
+//     const newUser = new Users.UserModel(req.body);
+//     return newUser.save().then(
+//         doc => res.status(201).send(doc),
+//         error => next(error)
+//     );
+// });
 
 // Create User
 // router.post('/', createUser);
@@ -26,7 +26,7 @@ exports = router.post('/create', (req, res, next) => {
 router.get('/', readUser);
 
 //Update User
-//router.put('/', updateUser);
+router.put('/:username', updateUser);
 
 // Delete User
 router.delete('/:username', deleteUser);

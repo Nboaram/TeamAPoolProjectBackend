@@ -5,11 +5,11 @@ const express = require("express");
 const cors = require('cors');
 const config = require('./config');
 const app = express();
+const bodyParser = require("body-parser");
 
 app.use(cors({origin: true}));
+app.use(bodyParser.json());
 app.use('/user', userRoutes);
-
-
 
 mongoose.connect(config.app.MONGODB_URI, {useNewUrlParser:true}, function (err) {
     if (err) {
