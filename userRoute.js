@@ -4,4 +4,4 @@ router.get('/:username', readUser);
 
 const readUserAll = require("./readUserAll.js");
 
-router.get('/:usernameall', readUserAll);
+router.get('/', readUserAll);
