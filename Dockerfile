@@ -2,8 +2,7 @@ FROM ubuntu
 WORKDIR /opt/backend
 USER root
 RUN apt update
-RUN apt-get install curl -y
-RUN apt-get install git -y
+RUN apt install -y curl git netcat
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install -y nodejs
 RUN apt-get install -y build-essential

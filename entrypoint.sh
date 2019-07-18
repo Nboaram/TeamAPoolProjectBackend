@@ -1,8 +1,8 @@
 #! /bin/sh
-
-until nc -z database 3306; do
+# apt install -y netcat
+until nc -z database 27017; do
     echo "waiting for db"
     sleep 1
 done
 
-node src/app.js
+node Index.js
