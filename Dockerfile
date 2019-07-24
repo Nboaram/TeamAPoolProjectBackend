@@ -10,6 +10,7 @@ WORKDIR /opt/backend/TeamAPoolProjectBackend
 COPY . .
 RUN npm install 
 RUN npm build
+ENV MONGO_HOST=database
 EXPOSE 8080
 COPY entrypoint.sh .
 ENTRYPOINT ["./entrypoint.sh"]
